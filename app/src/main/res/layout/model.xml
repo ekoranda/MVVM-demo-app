@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="isItem"
+            type="com.koranda.mypets.data.repository.model.Pet" />
+    </data>
+    <androidx.cardview.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="5dp"
+    android:orientation="horizontal"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/iconSection"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_launcher_foreground"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="24dp"
+            android:padding="3dp"
+            android:text="@{isItem.name}"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#009968"
+            card_view:layout_constraintLeft_toRightOf="@+id/iconSection"
+            card_view:layout_constraintStart_toEndOf="@+id/iconSection"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="32dp"
+            android:layout_toEndOf="@+id/iconSection"
+            android:maxLines="3"
+            android:text="Star Description"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="italic"
+            card_view:layout_constraintLeft_toRightOf="@+id/iconSection"
+            card_view:layout_constraintStart_toEndOf="@+id/iconSection"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+</layout>
